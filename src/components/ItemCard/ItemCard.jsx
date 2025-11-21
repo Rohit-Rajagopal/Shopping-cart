@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./ItemCard.module.css";
 
-function ItemCard({ name="default", price="10" }) {
+function ItemCard({ name, price, cartUpdateFn }) {
     const [ quantity, setQuantity ] = useState(0);
 
     const updateQuantity = (val) => {
@@ -20,7 +20,7 @@ function ItemCard({ name="default", price="10" }) {
                 <p className={styles.quantityDisplay}>{quantity}</p>
                 <button onClick={() => updateQuantity(1)}>+</button>
             </div>
-            <button>Add to cart</button>
+            <button onClick={() => cartUpdateFn(name, quantity, price)}>Add to cart</button>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router";
 import ItemCard from "../ItemCard/ItemCard";
 import styles from "./Shop.module.css";
 
@@ -25,6 +26,18 @@ const useFetch = (url) => {
 
 function Shop() {
     const { data, loading, error } = useFetch("https://fakestoreapi.com/products");
+    const [ cart, setCart ] = useOutletContext();
+
+    const updateCart = (name, quantity, price) => {
+        setCart({
+            ...cart,
+            [name]: {
+                quantity,
+                price,
+            }
+        })
+        console.log(cart);
+    }
 
     if (loading) return <p>Loading...</p>;
 
@@ -33,7 +46,7 @@ function Shop() {
     return (
         <div className={styles.itemsDisplay}>
             {
-                data.map((item) => <ItemCard name={item.title} price={item.price} />)
+                data.map((item) => <ItemCard key={`${item.title} ${item.price}`} name={item.title} price={item.price} cartUpdateFn={updateCart} />)
             }
         </div>
     )
