@@ -1,5 +1,6 @@
 import App from "./App";
 import Home from "./components/home/home";
+import Shop from "./components/Shop/Shop";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 const routes = [
@@ -10,6 +11,10 @@ const routes = [
             {
                 index: true,
                 element: <Home />,
+            },
+            {
+                path: "shop",
+                element: <Shop />,
             },
         ],
         errorElement: <ErrorPage />,
