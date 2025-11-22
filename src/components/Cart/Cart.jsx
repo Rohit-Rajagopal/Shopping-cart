@@ -11,10 +11,10 @@ function calcTotalPrice(cart) {
     return total;
 }
 
-function getCartList(cart, delFn) {
+function getCartList(cart, delFn, quantityUpdateFn) {
     const cartList = [];
     for (let item in cart) {
-        cartList.push(<CartItem key={`${item} ${cart[item].price}`} name={item} price={cart[item].price} initQuantity={cart[item].quantity} delFn={delFn} />)
+        cartList.push(<CartItem key={`${item} ${cart[item].price}`} name={item} price={cart[item].price} quantity={cart[item].quantity} delFn={delFn} quantityUpdateFn={quantityUpdateFn}/>)
     }
     return cartList;
 }
@@ -27,9 +27,19 @@ function Cart() {
     const delItem = (name) => {
         const { [name]: _, ...rest} = cart;
         setCart(rest);
-    }
+    };
 
-    const cartList = getCartList(cart, delItem);
+    const updateCart = (name, newQuantity) => {
+        setCart({
+            ...cart,
+            [name]: {
+                ...cart[name],
+                quantity: newQuantity,
+            }
+        })
+    };
+
+    const cartList = getCartList(cart, delItem, updateCart);
 
     return (
         <div>

@@ -1,14 +1,13 @@
 import { useState } from "react";
 import styles from "./CartItem.module.css";
 
-function CartItem({ name, price, delFn, initQuantity }) {
-    const [ quantity, setQuantity ] = useState(initQuantity);
+function CartItem({ name, price, delFn, quantity, quantityUpdateFn }) {
 
     const updateQuantity = (val) => {
         if (quantity + val < 0) {
             return;
         }
-        setQuantity(quantity + val);
+        quantityUpdateFn(name, quantity + val);
     }
     
     return (

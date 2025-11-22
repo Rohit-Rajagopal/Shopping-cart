@@ -36,7 +36,6 @@ function Shop() {
                 price,
             }
         })
-        console.log(cart);
     }
 
     if (loading) return <p>Loading...</p>;
