@@ -43,7 +43,7 @@ function Cart() {
 
     return (
         <div>
-            <p>Total: Rs. {totalPrice}</p>
+            <p className={styles.totalDisplay}><strong>Total:</strong> Rs. {totalPrice}</p>
             <div className={styles.itemsDisplay}>
                 {cartList}
             </div>

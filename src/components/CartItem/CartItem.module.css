@@ -1,18 +1,58 @@
 .card {
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px black;
-    padding: 10px;
+  border: 1px solid #ccc;          /* Softer border */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);   /* Softer shadow */
+  padding: 12px;
+  width: 200px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .quantityBox {
-    display: grid;
-    grid-template-columns: repeat(3, 20px);
-    grid-template-rows: 30px;
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;  /* More breathing room */
+  grid-template-rows: 32px;
+  align-items: center;
+  justify-items: center;
+  gap: 6px;
+}
+
+.quantityBox button {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: #eaeaea;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.15s ease;
+}
+
+.quantityBox button:hover {
+  background: #d5d5d5;
 }
 
 .quantityDisplay {
-    margin: 0;
-    font-size: 20px;
-    padding-left: 5px;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.card button {
+  border: none;
+  background: #0077ff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.card button:hover {
+  background: #005fcc;
 }

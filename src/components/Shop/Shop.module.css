@@ -1,6 +1,7 @@
 .itemsDisplay {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: auto;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
+  gap: 16px;
+  padding: 10px;
+  justify-items: center;
 }

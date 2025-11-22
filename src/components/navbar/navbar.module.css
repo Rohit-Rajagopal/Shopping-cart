@@ -1,0 +1,24 @@
+.nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0.75rem 1.5rem;
+}
+
+.list {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.item a:hover {
+  color: #0077ff;
+}
