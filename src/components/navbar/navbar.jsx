@@ -11,9 +11,9 @@ function NavBar() {
                 <li>
                     <Link to="/shop">Shop</Link>
                 </li>
-                {/* <li>
+                <li>
                     <Link to="/cart">Cart</Link>
-                </li> */}
+                </li>
             </ul>
         </nav>
     )

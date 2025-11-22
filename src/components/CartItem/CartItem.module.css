@@ -1,0 +1,18 @@
+.card {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    padding: 10px;
+}
+
+.quantityBox {
+    display: grid;
+    grid-template-columns: repeat(3, 20px);
+    grid-template-rows: 30px;
+}
+
+.quantityDisplay {
+    margin: 0;
+    font-size: 20px;
+    padding-left: 5px;
+}
